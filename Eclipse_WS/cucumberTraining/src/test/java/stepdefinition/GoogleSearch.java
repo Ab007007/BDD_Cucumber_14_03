@@ -13,19 +13,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class GoogleSearch {
+public class GoogleSearch extends BaseClass{
 
-	WebDriver driver  = null;
+//	WebDriver driver  = null;
 	@Given("user is on google page")
 	public void user_is_on_google_page() {
 		System.out.println("User Registration page launching");
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver = getDriver();
 		driver.get("https://www.google.com/");
 	}
 
-	@When("user enter {string} in search box")
+	@When("user enter {} in search box")
 	public void user_enter_synechron_in_search_box(String text) {
 		
 		driver.findElement(By.name("q")).sendKeys(text);
@@ -63,5 +61,21 @@ public class GoogleSearch {
 			System.out.println(result.getText());
 		}
 	}
+	
+	@Then("user will printall the hyperlinks")
+	public void user_will_printall_the_hyperlinks() {
+		List<WebElement> searchResults = driver.findElements(By.xpath("//h3"));
+		for (WebElement result : searchResults) {
+			System.out.println(result.getText());
+		}
+	}
+	@Then("click on first link")
+	public void click_on_first_link() throws InterruptedException {
+		driver.findElement(By.xpath("(//a[h3])[1]")).click();
+		Thread.sleep(5000);
+		driver.close();
+	}
+
+
 
 }
