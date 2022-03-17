@@ -1,3 +1,4 @@
+@datatable
 Feature: Register multiple users
 # my scenario is starting
   Scenario: User Registration in Formy Application

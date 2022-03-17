@@ -1,3 +1,4 @@
+@regression @uat
 Feature: MouseMovemet demo
 
   Scenario: User print all items under main section

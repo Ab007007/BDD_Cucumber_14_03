@@ -1,4 +1,4 @@
-@mustrun @development
+@parallel
 Feature: Google Search Box
 
 Background:

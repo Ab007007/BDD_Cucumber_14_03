@@ -1,5 +1,7 @@
+@datatable
 Feature: Register multiple users
-# my scenario is starting
+
+  # my scenario is starting
   Scenario: User Registration in Formy Application
     Given user launch formyApplication
     When user enter all the details and validate the success msg

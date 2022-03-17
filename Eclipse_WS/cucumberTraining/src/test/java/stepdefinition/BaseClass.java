@@ -19,4 +19,7 @@ public class BaseClass {
 		driver.manage().window().maximize();
 		return driver;
 	}
+	
+	
+	
 }

@@ -1,5 +1,6 @@
 Feature: Multiple Search in google
 
+	@google @example
   Scenario Outline: Google Multiple Search
     Given user is on google page
     When user enter <company> in search box

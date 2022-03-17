@@ -1,12 +1,12 @@
 Feature: Google Search Box
-
+@google
 Scenario: Disaplay Auto suggestions for synechron
 Given user is on google page
 When user enter synechron in search box
 Then user should get suggestions based on search criteria
 And user will print the suggestions
 
-
+@google @regression
 Scenario: Disaplay Suggestions for synechron Search
 Given user is on google page
 When user enter synechron in search box

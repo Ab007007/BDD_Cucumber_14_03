@@ -8,6 +8,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
+import io.cucumber.java.BeforeStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,6 +21,39 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class GoogleSearch extends BaseClass{
 
+	@BeforeStep
+	public void beforeStep() {
+		System.out.println("---------------------------------------------------------");
+	}
+	
+	@AfterStep
+	public void afterStep() {
+		System.out.println("..........................................................");
+	}
+	
+	
+	@Before(order = 1)
+	public void beforeScenario() {
+		System.out.println("###########################################################");
+	}
+	
+	@After
+	public void afterScenario() {
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	}
+	
+	@Before("@google")
+	public void beforeGoogleScenario() {
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+	}
+	
+	@After("@google1")
+	public void afterGooleScenario(Scenario sc) {
+		System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+		System.out.println(sc.getName());
+		System.out.println(sc.getStatus());
+		System.out.println(sc.getId());
+	}
 //	WebDriver driver  = null;
 	@Given("user is on google page")
 	public void user_is_on_google_page() {

@@ -8,10 +8,15 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions (features = "src/test/java/feature/actionsInBDD.feature" ,
+@CucumberOptions (features = "src/test/java/feature/" ,
 				  glue = {"stepdefinition"},
-				  //dryRun = true,
+				 // dryRun = true,
 				  monochrome = true,
+				  tags = "@parallel",
+//				  tags = "@uat",
+//				  tags = "@uat and @regression",
+//				  tags = "@uat or  @regression",
+//				  tags = "@uat and not @regression",
 				  plugin = { "pretty" , "junit:target/JunitReports/reports.xml",
 						  				"json:target/JsonReports/reports.json",
 						  				"html:target/HTMLReports/reports.html"

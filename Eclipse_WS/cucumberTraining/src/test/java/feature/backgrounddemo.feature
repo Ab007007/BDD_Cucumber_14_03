@@ -5,7 +5,7 @@ Background:
 Given user is on google page
 
 
-@development @uat @google
+@development @uat @google1
 Scenario: Disaplay Auto suggestions for IBM
 When user enter "IBM" in search box
 Then user should get suggestions based on search criteria
@@ -23,7 +23,7 @@ When user enter "Infosys" in search box
 Then user should get suggestions based on search criteria
 And user will print the suggestions
 
-
+@smoke
 Scenario: Disaplay Auto suggestions for JUNKTEXT
 When user enter "Infosysasdfasfasdfasdfasdfasdfasfd" in search box
 Then user should get suggestion based on search criteria
